@@ -1,3 +1,4 @@
+# Trap and hazard script
 #this is for when you want to jump the player by touching the jumnping system (like a jumping jack used in platform)
 
 extends Area2D
