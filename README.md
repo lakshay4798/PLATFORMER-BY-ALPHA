@@ -18,4 +18,9 @@ PAUSE      : TAB
 
 THE LINK TO PLAY :- https://lakshay-2009.itch.io/platform-by-alpha
 
+
+AI Use Declaration 
+
+This project used AI assistance during development: Claude (by Anthropic) - used for help with exporting game from godot
+
 THE GAME ITSELF MADE  (code, art, design, and gameplay) BY ME.
