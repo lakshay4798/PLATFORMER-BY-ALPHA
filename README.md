@@ -7,8 +7,11 @@ THIS GAME IS VERY SIMPLE
 HERE'S THE CONTROLS FOR THIS GAME:
 
 Move Left  : A / Left Arrow
+
 Move Right : D / Right Arrow
+
 Jump       : Space / ENTER
+
 PAUSE      : TAB  
 
 THE LINK TO PLAY :- https://lakshay-2009.itch.io/platform-by-alpha
