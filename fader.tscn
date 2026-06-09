@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://byrhf6v3q20t0"]
+
+[ext_resource type="Script" uid="uid://dtqcrq84wl7bv" path="res://fader.gd" id="1_8b40m"]
+
+[node name="fader" type="CanvasLayer" unique_id=400008077]
+script = ExtResource("1_8b40m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1326883506]
+offset_right = 1283.0
+offset_bottom = 725.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

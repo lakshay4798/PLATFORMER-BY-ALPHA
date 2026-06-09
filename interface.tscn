@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c7pd312lqhsid"]
+
+[ext_resource type="Script" uid="uid://dle84fuluxw2u" path="res://interface.gd" id="1_rh14k"]
+[ext_resource type="Texture2D" uid="uid://c2h0e6lunhhtq" path="res://New free backgrounds part1/background 3/1.png" id="2_oi7g3"]
+[ext_resource type="Texture2D" uid="uid://bh6aermnmf5d1" path="res://New free backgrounds part1/background 2/1.png" id="3_4rbkc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi7g3"]
+texture = ExtResource("2_oi7g3")
+modulate_color = Color(0.32026795, 0.32026795, 0.32026795, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxhdb"]
+bg_color = Color(18.892157, 18.892157, 18.892157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyn48"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control" unique_id=29121665]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rh14k")
+
+[node name="Panel" type="Panel" parent="." unique_id=763228108]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 721.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oi7g3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1533300863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.75
+offset_top = -56.5
+offset_right = 132.75
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1500023350]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxhdb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kyn48")
+text = "RESTART"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1348185506]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxhdb")
+text = "RESUME"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2107943450]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxhdb")
+text = "QUIT
+"
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=67934831]
+visible = false
+layout_mode = 0
+offset_left = 568.0
+offset_top = 281.0
+offset_right = 1011.0
+offset_bottom = 389.0
+text = "Simple Platform"
+
+[node name="1" type="Sprite2D" parent="." unique_id=658576497]
+position = Vector2(-362, 333)
+texture = ExtResource("3_4rbkc")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://bgwbc556jfx85"]
+
+[ext_resource type="PackedScene" uid="uid://8pbjs73g2juc" path="res://level1.tscn" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://b41fojtngcm42" path="res://assets/assets/sounds/music.ogg" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c7pd312lqhsid" path="res://interface.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dh135h7tklrsn" path="res://death.tscn" id="5_lquwl"]
+
+[sub_resource type="GDScript" id="GDScript_ig7tw"]
+script/source = "extends Node2D
+#trial
+@onready var menu = $CanvasLayer/Control
+
+var menu_open = false
+var score : int = 0
+
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
+		menu_open = !menu_open
+		menu.visible = menu_open
+	if event.is_action_pressed(\"ui_cancel\"):
+		#menu.visible = !menu.visible
+		get_tree().paused = menu.visible
+
+
+var level: int = 1
+var current_level_root: Node  = null
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Fader.fade_out()
+	current_level_root = get_node(\"levelroot\")
+	_load_level(level)
+#setup the level
+########################################
+##############################################
+
+ ## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+#pass
+#### level Management #####
+
+func _load_level(level_number: int) -> void:
+	if current_level_root:
+		current_level_root.queue_free()
+
+#change level
+	var level_path =  \"res://level_%s.tscn\"  % level_number
+	current_level_root = load(level_path).instantiate()
+	add_child(current_level_root)
+	current_level_root.name = \"levelroot\" 
+	_setup_level(current_level_root) 
+
+#func _setup_level(level_root: Node) -> void:
+	#apple
+	#var apples = $APPLES.get_node_or_null(\"APPLES\")
+	#if apples:
+		#for apple in apples.get_children():
+			#apple.collected.connect(increase_score)
+			
+func _setup_level(level_root: Node) -> void:
+	print(\"Setting up level, root: \", level_root.name)  # check this prints
+	
+	#var apples = level_root.get_node_or_null(\"APPLES\")
+	#print(\"APPLES node found: \", apples)  # should NOT print null
+	#
+	#if apples:
+		#print(\"Apple count: \", apples.get_child_count())  # should print 2
+		#for apple in apples.get_children():
+			#apple.collected.connect(increase_score)
+
+
+#connect exit
+	var exit = level_root.get_node_or_null(\"exit\")
+	if exit:
+		exit.body_entered.connect(_on_exit_body_entered)
+
+#signal handlers
+func _on_exit_body_entered(body: Node2D) -> void:
+	if body.name == \"player\":
+		#Fader.fade_in()
+		level += 1
+		print (level)
+		body.can_move = false
+		_load_level(level)
+		Fader.fade_out()
+		
+	#if body.name == \"player\":
+		#$CanvasLayer/darkoverlay.visible = true
+		#$CanvasLayer/GAMEOVERUI.visible = true
+		#get_tree().paused = true
+
+
+func increase_score() -> void:
+	score += 1
+	print(score)
+	
+func _process(delta):
+	Global.game_time += delta
+"
+
+[node name="main" type="Node2D" unique_id=1317109775]
+script = SubResource("GDScript_ig7tw")
+
+[node name="levelroot" parent="." unique_id=601657106 instance=ExtResource("1_ig7tw")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1873083548]
+
+[node name="Control" parent="CanvasLayer" unique_id=29121665 instance=ExtResource("4_1bvp3")]
+
+[node name="darkoverlay" type="ColorRect" parent="CanvasLayer" unique_id=1765917033]
+visible = false
+offset_right = 1295.0
+offset_bottom = 718.0
+color = Color(0, 0, 0, 0.54509807)
+
+[node name="GAMEOVERUI" type="Control" parent="CanvasLayer" unique_id=1646004096]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1291.0
+offset_bottom = 718.0
+
+[node name="Button" type="Button" parent="CanvasLayer/GAMEOVERUI" unique_id=1066212778]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 377.0
+offset_right = 631.0
+offset_bottom = 408.0
+text = "RETRY"
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=970817049]
+stream = ExtResource("2_0xm2m")
+autoplay = true
+
+[node name="death" parent="." unique_id=386459960 instance=ExtResource("5_lquwl")]
+position = Vector2(3, 866)
+
+[connection signal="pressed" from="CanvasLayer/GAMEOVERUI/Button" to="CanvasLayer/GAMEOVERUI" method="_on_button_pressed"]

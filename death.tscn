@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dh135h7tklrsn"]
+
+[ext_resource type="Script" uid="uid://b5b2av268qyts" path="res://death.gd" id="1_qemge"]
+[ext_resource type="AudioStream" uid="uid://b6q278bhlwtgx" path="res://universfield-game-over-deep-male-voice-clip-352695.mp3" id="2_lf77f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5ngi"]
+size = Vector2(150748, 361.5)
+
+[node name="death" type="Area2D" unique_id=386459960]
+script = ExtResource("1_qemge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=914216344]
+position = Vector2(31422, 143.25)
+shape = SubResource("RectangleShape2D_p5ngi")
+
+[node name="GAMEOVER" type="AudioStreamPlayer2D" parent="." unique_id=1994824276]
+stream = ExtResource("2_lf77f")
+
+[node name="Timer" type="Timer" parent="." unique_id=685993010]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,344 @@
+[gd_scene format=3 uid="uid://dvunpe1u2cl5w"]
+
+[ext_resource type="Texture2D" uid="uid://bxj0ukky385p0" path="res://New free backgrounds part1/background 4/1.png" id="1_brkdw"]
+[ext_resource type="Texture2D" uid="uid://clsvk5gb3xbyi" path="res://assets/assets/images/Tilemap/Terrain (16x16).png" id="2_soim0"]
+[ext_resource type="PackedScene" uid="uid://dd7xufx5krr2d" path="res://player.tscn" id="3_vp58d"]
+[ext_resource type="Script" uid="uid://c7jsart72j5m4" path="res://exit.gd" id="4_3eqwd"]
+[ext_resource type="Texture2D" uid="uid://dbig7mo1e56pp" path="res://assets/assets/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="5_xo623"]
+[ext_resource type="PackedScene" uid="uid://nc2ynslmkbu2" path="res://moving_platform.tscn" id="7_yh5ew"]
+[ext_resource type="PackedScene" uid="uid://dh135h7tklrsn" path="res://death.tscn" id="8_dxhc4"]
+[ext_resource type="PackedScene" uid="uid://c1q5xudrn0r31" path="res://trap.tscn" id="9_soim0"]
+[ext_resource type="FontFile" uid="uid://d17stwwehmkwd" path="res://assets/assets/fonts/Square-Black.ttf" id="10_3eqwd"]
+[ext_resource type="PackedScene" uid="uid://b6qfi85msmc8m" path="res://killzone.tscn" id="10_vp58d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tac4s"]
+texture = ExtResource("2_soim0")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qhsfq"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tac4s")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ons7"]
+size = Vector2(67, 125.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8kj3"]
+atlas = ExtResource("5_xo623")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crycw"]
+atlas = ExtResource("5_xo623")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2041"]
+atlas = ExtResource("5_xo623")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy4tn"]
+atlas = ExtResource("5_xo623")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usj0q"]
+atlas = ExtResource("5_xo623")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j5gb"]
+atlas = ExtResource("5_xo623")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx85b"]
+atlas = ExtResource("5_xo623")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx44q"]
+atlas = ExtResource("5_xo623")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8vhr"]
+atlas = ExtResource("5_xo623")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrsh"]
+atlas = ExtResource("5_xo623")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tac4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8kj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crycw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2041")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy4tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usj0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j5gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx85b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx44q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqrsh")
+}],
+"loop": true,
+"name": &"flag",
+"speed": 15.0
+}]
+
+[node name="level_6" type="Node2D" unique_id=487483380]
+position = Vector2(1, 0)
+
+[node name="killzone2" parent="." unique_id=478270250 instance=ExtResource("10_vp58d")]
+position = Vector2(908, 556)
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1613122568]
+visible = false
+position = Vector2(849.99994, 465.99997)
+scale = Vector2(7.5763884, 6.1111107)
+texture = ExtResource("1_brkdw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=987908426]
+offset_left = -7263.0
+offset_top = -2659.0
+offset_right = 9444.0
+offset_bottom = 4702.0
+texture = ExtResource("1_brkdw")
+expand_mode = 2
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1171450443]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_qhsfq")
+format = 2
+layer_0/tile_data = PackedInt32Array(786432, 458752, 1, 786433, 458752, 1, 786434, 458752, 1, 786435, 458752, 1, 786436, 458752, 1, 786437, 458752, 1, 786438, 458752, 1, 851974, 458752, 1, 917510, 458752, 1, 917509, 458752, 1, 917508, 458752, 1, 917507, 458752, 1, 917506, 458752, 1, 917505, 458752, 1, 851969, 458752, 1, 851968, 458752, 1, 917504, 458752, 1, 851971, 458752, 1, 851972, 458752, 1, 851973, 458752, 1, 851970, 458752, 1, 786440, 458752, 1, 851976, 458752, 1, 786441, 458752, 1, 851977, 458752, 1, 720909, 458752, 1, 720910, 458752, 1, 720911, 458752, 1, 786447, 458752, 1, 786446, 458752, 1, 786445, 458752, 1, 720902, 458752, 0, 720901, 458752, 0, 720900, 458752, 0, 720899, 458752, 0, 720898, 458752, 0, 720897, 458752, 0, 720896, 458752, 0, 720904, 458752, 0, 720905, 458752, 0, 655373, 458752, 0, 655374, 458752, 0, 655375, 458752, 0, 720908, 458752, 0, 917501, 458752, 1, 917500, 458752, 1, 917499, 458752, 1, 851963, 458752, 0, 851964, 458752, 0, 851965, 458752, 0, 655352, 458752, 0, 655353, 458752, 0, 720888, 458752, 1, 720889, 458752, 1, 393233, 458752, 0, 393234, 458752, 0, 393235, 458752, 1, 327699, 458752, 0, 786450, 458752, 1, 851986, 458752, 1, 851987, 458752, 1, 851988, 458752, 1, 786452, 458752, 1, 786451, 458752, 1, 851989, 458752, 1, 720914, 458752, 0, 720915, 458752, 0, 720916, 458752, 0, 786453, 458752, 0, 917528, 458752, 1, 917529, 458752, 1, 851992, 458752, 0, 851993, 458752, 0, 196630, 458752, 1, 196631, 458752, 1, 131094, 458752, 0, 131095, 458752, 0)
+
+[node name="player" parent="." unique_id=232301799 instance=ExtResource("3_vp58d")]
+position = Vector2(144, 481)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=507146943]
+limit_enabled = false
+limit_bottom = 384
+
+[node name="Label" type="Label" parent="player/Camera2D" unique_id=1888595473]
+offset_left = -635.0
+offset_top = -355.0
+offset_right = -553.0
+offset_bottom = -329.0
+theme_override_fonts/font = ExtResource("10_3eqwd")
+theme_override_font_sizes/font_size = 25
+text = "LEVEL 6"
+
+[node name="exit" type="Area2D" parent="." unique_id=1042621118]
+position = Vector2(1275, 175)
+script = ExtResource("4_3eqwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=251627141]
+position = Vector2(1, 412)
+shape = SubResource("RectangleShape2D_8ons7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1830885718]
+texture_filter = 1
+position = Vector2(1201.0001, 581)
+scale = Vector2(1.515625, 1.34375)
+sprite_frames = SubResource("SpriteFrames_tac4s")
+animation = &"flag"
+autoplay = "flag"
+
+[node name="moving_platform" parent="." unique_id=1514246694 instance=ExtResource("7_yh5ew")]
+visible = false
+position = Vector2(1685, 245)
+
+[node name="death" parent="." unique_id=386459960 instance=ExtResource("8_dxhc4")]
+position = Vector2(247, 1040)
+
+[node name="trap" parent="." unique_id=892469146 instance=ExtResource("9_soim0")]
+position = Vector2(577, 518)
+
+[node name="killzone" parent="." unique_id=1207201179 instance=ExtResource("10_vp58d")]
+position = Vector2(479, 664)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=125353169]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1032572317]
+visible = false
+offset_left = 119.0
+offset_top = 247.0
+offset_right = 301.0
+offset_bottom = 273.0
+theme_override_fonts/font = ExtResource("10_3eqwd")
+theme_override_font_sizes/font_size = 25
+text = "3 LIVES REMAINING"
+
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=1381275327]
+position = Vector2(92, 464)
+
+[connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]
+[connection signal="body_entered" from="death" to="death" method="_on_body_entered"]
