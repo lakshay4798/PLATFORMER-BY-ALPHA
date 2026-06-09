@@ -23,4 +23,9 @@ AI Use Declaration
 
 This project used AI assistance during development: Claude (by Anthropic) - used for help with exporting game from godot
 
+TUTORIAL DECLARATION
+
+This game was built with help from [Godot Platformer Tutorial Playlist]. My additions include: 10 custom levels, trap mechanics, moving platforms, settings menu, and custom sound effects.
+
+
 THE GAME ITSELF MADE  (code, art, design, and gameplay) BY ME.
