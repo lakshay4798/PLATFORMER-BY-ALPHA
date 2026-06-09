@@ -1,3 +1,4 @@
+# Player movement and physics script
 extends CharacterBody2D
 @onready var animated_sprite_2d:AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound:AudioStreamPlayer2D = $jumpsound
