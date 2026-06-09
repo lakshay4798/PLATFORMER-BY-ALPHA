@@ -1,3 +1,4 @@
+# Settings menu script
 extends Control
 @onready var click_sound: AudioStreamPlayer2D = $Button/click
 
