@@ -1,3 +1,4 @@
+# Start menu script
 extends Control
 @onready var click_sound: AudioStreamPlayer2D = $VBoxContainer/Button/click
 var muted = false
