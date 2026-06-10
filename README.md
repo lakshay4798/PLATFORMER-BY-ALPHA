@@ -30,8 +30,7 @@ My additions include: 10 custom levels, trap mechanics, moving platforms, settin
 
 
 THE GAME ITSELF MADE (code, art, design, and gameplay) BY ME.
-
----
+-
 
 
 
